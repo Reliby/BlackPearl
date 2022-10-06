@@ -8,82 +8,87 @@
                     WindowStartupLocation="CenterScreen"
                     Height="500"
                     Width="500">
-    <mahapp:MetroWindow.DataContext>
-        <local:MainWindowViewModel />
-    </mahapp:MetroWindow.DataContext>
-    <StackPanel>
-        <Border BorderBrush="Black"
+  <mahapp:MetroWindow.DataContext>
+    <local:MainWindowViewModel />
+  </mahapp:MetroWindow.DataContext>
+  <StackPanel>
+    <Border BorderBrush="Black"
                 BorderThickness="1"
                 Margin="5">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
 
-                <Label Content="Simple Example" />
-                <StackPanel Grid.Row="1"
+        <Label Content="Simple Example" />
+        <StackPanel Grid.Row="1"
                             Margin="5,0,5,0">
-                    <TextBlock Text="DisplayMemberPath = Name"
+          <TextBlock Text="DisplayMemberPath = Name"
                                FontWeight="Bold" />
-                    <TextBlock Text="ItemSeparator = ;"
+          <TextBlock Text="ItemSeparator = ;"
                                FontWeight="Bold" />
-                </StackPanel>
-                <controls:MultiSelectCombobox ItemSource="{Binding Source, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        </StackPanel>
+        <controls:MultiSelectCombobox ItemSource="{Binding Source, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                               SelectedItems="{Binding SelectedItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                               DisplayMemberPath="Name"
                                               ItemSeparator=";"
                                               Grid.Row="2" />
-                <Button Content="Show selected"
+        <Button Content="Show selected"
                         Command="{Binding ShowSelectedItemCommand}"
                         CommandParameter="{Binding SelectedItems}"
                         Grid.Row="2"
                         Grid.Column="1" />
-            </Grid>
-        </Border>
-        <Border BorderBrush="Black"
+        <Button Content="Add Item"
+                        Command="{Binding AddItemCommand}"
+                        CommandParameter="{Binding SelectedItems}"
+                        Grid.Row="1"
+                        Grid.Column="1" />
+      </Grid>
+    </Border>
+    <Border BorderBrush="Black"
                 BorderThickness="1"
                 Margin="5">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
 
-                <Label Content="Advance look-up contract Example" />
-                <StackPanel Grid.Row="1"
+        <Label Content="Advance look-up contract Example" />
+        <StackPanel Grid.Row="1"
                             Margin="5,0,5,0">
-                    <TextBlock Text="DisplayMemberPath = Info"
+          <TextBlock Text="DisplayMemberPath = Info"
                                FontWeight="Bold" />
-                    <TextBlock Text="ItemSeparator = ;"
+          <TextBlock Text="ItemSeparator = ;"
                                FontWeight="Bold" />
-                    <TextBlock Text="LookUpContract = AdvanceLookUpContract"
+          <TextBlock Text="LookUpContract = AdvanceLookUpContract"
                                FontWeight="Bold" />
-                    <TextBlock Text="Create InputFormat= {Name} , {Company} , {ZipCode};"
+          <TextBlock Text="Create InputFormat= {Name} , {Company} , {ZipCode};"
                                FontWeight="Bold" />
-                </StackPanel>
-                <controls:MultiSelectCombobox ItemSource="{Binding Source, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        </StackPanel>
+        <controls:MultiSelectCombobox ItemSource="{Binding Source, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                               SelectedItems="{Binding SelectedItems2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                               DisplayMemberPath="Info"
                                               ItemSeparator=";"
                                               LookUpContract="{Binding AdvanceLookUpContract}"
                                               Grid.Row="2" />
-                <Button Content="Show selected"
+        <Button Content="Show selected"
                         Command="{Binding ShowSelectedItemCommand}"
                         CommandParameter="{Binding SelectedItems2}"
                         Grid.Row="2"
                         Grid.Column="1" />
-            </Grid>
-        </Border>
-    </StackPanel>
+      </Grid>
+    </Border>
+  </StackPanel>
 </mahapp:MetroWindow>

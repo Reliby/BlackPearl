@@ -173,11 +173,12 @@ namespace BlackPearl.Controls.CoreLibrary
             try
             {
                 //Unsubscribe handlers first
-                if (!multiChoiceControl.UnsubscribeHandler())
-                {
-                    //Failed to unsubscribe, return
-                    return;
-                }
+                multiChoiceControl.UnsubscribeHandler();
+                //if (!multiChoiceControl.UnsubscribeHandler())
+                //{
+                //    //Failed to unsubscribe, return
+                //    return;
+                //}
 
                 //Clear everything in RichTextBox
                 multiChoiceControl.RichTextBoxElement?.ClearParagraph();
